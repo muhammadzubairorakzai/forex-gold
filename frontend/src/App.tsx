@@ -2,6 +2,7 @@ import { AppShell } from "@/components/shell/AppShell";
 import { LoginPage } from "@/pages/LoginPage";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { Analytics } from "@vercel/analytics/react";
 
 function Gate() {
   const { ready, reachable, authenticated, auto_login } = useAuth();
@@ -39,6 +40,7 @@ export default function App() {
       <AuthProvider>
         <Gate />
       </AuthProvider>
+      <Analytics />
     </ThemeProvider>
   );
 }
